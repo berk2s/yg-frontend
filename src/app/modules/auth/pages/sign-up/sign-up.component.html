@@ -1,0 +1,139 @@
+<div fxLayout="column" class="container">
+
+    <div class="header">
+        <div class="brand-area">
+            <div class="brand-box">
+                <span class="brand-box-text">YG</span>
+            </div>
+
+            <div class="brand-name">
+                <p class="brand-text">Yatay Geçişle</p>
+            </div>
+        </div>
+
+        <div class="button-area">
+
+            <ng-container *ngIf="stepper.selectedIndex !== 0">
+                <a mat-button class="btn" (click)="stepper.previous()">
+                    <fa-icon [icon]="arrowLeft"></fa-icon>
+                    <span>Geri</span>
+                </a>
+            </ng-container>
+
+            <a [routerLink]="'/giris'" mat-button class="btn">Giriş yap</a>
+
+        </div>
+    </div>
+
+    <div class="auth-page-content">
+        <div class="content-wrapper">
+            <div class="content-header">
+                <span class="main-title" *ngIf="stepper.selectedIndex === 0">Üye olarak devam edin</span>
+                <span class="main-title" *ngIf="stepper.selectedIndex === 1">Biraz daha bilgi gerekli</span>
+                <span class="main-title" *ngIf="stepper.selectedIndex === 2">Neredeyse bitti</span>
+                <span class="sub-title">İleriki adımlar için bilgileri girin</span>
+            </div>
+
+            <div class="content-details">
+
+                <mat-stepper [linear]="true" #stepper>
+
+                    <mat-step [stepControl]="firstFormGroup">
+
+                        <form [formGroup]="firstFormGroup">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Telefon Numarası</mat-label>
+                                <input matInput placeholder="" prefix="+90 5" mask="00 000 0000" [formControlName]="'phoneNumber'" [validation]="true">
+                            </mat-form-field>
+
+                            <div class="btn-wrapper">
+                                <button matStepperNext mat-button class="form-btn" [disabled]="firstFormGroup.invalid">Devam et</button>
+                            </div>
+
+
+                            <div class="separator">Veya</div>
+
+                            <div class="social-wrapper">
+
+                                <a href="" class="social-btn">
+                                    <fa-icon [icon]="google"></fa-icon>
+                                    <span>Google ile devam et</span>
+                                </a>
+
+                                <a href="" class="social-btn">
+                                    <fa-icon [icon]="facebook"></fa-icon>
+                                    <span>Facebook ile devam et</span>
+                                </a>
+
+                            </div>
+
+                        </form>
+
+                    </mat-step>
+
+                    <mat-step [stepControl]="secondFormGroup">
+                        <form [formGroup]="secondFormGroup">
+                            <mat-form-field class="" appearance="outline">
+                                <mat-label>E-Posta</mat-label>
+                                <input matInput placeholder="" [formControlName]="'email'">
+                            </mat-form-field>
+
+                            <div class="form-group">
+                                <mat-form-field class="" appearance="outline">
+                                    <mat-label>İsim</mat-label>
+                                    <input matInput placeholder="" [formControlName]="'firstName'">
+                                </mat-form-field>
+
+                                <mat-form-field class="" appearance="outline">
+                                    <mat-label>Soyisim</mat-label>
+                                    <input matInput placeholder="" [formControlName]="'lastName'">
+                                </mat-form-field>
+                            </div>
+
+                            <mat-form-field class="" appearance="outline">
+                                <mat-label>Şifre</mat-label>
+                                <input matInput placeholder="" [formControlName]="'password'">
+                            </mat-form-field>
+
+                            <mat-form-field class="" appearance="outline">
+                                <mat-label>Şifre Tekrarı</mat-label>
+                                <input matInput placeholder="" [formControlName]="'passwordConfirm'">
+                            </mat-form-field>
+
+                            <section class="agree-box-wrapper">
+                                <mat-checkbox class="agree-box"> <a href="">Kullanım koşullarını</a> ve <a href="">üyelik sözleşmesini</a> kabul ediyorum.</mat-checkbox>
+                            </section>
+
+                            <div class="btn-wrapper">
+                                <button matStepperNext mat-button class="form-btn" [disabled]="secondFormGroup.invalid">Devam et</button>
+                            </div>
+
+                        </form>
+
+                    </mat-step>
+
+                    <mat-step [stepControl]="thirdFormGroup">
+
+                        <form [formGroup]="thirdFormGroup">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Doğrulama kodu</mat-label>
+                                <input matInput placeholder="" mask="0 0 0 0 0 0" [formControlName]="'verificationCode'" [validation]="true">
+                            </mat-form-field>
+
+                            <div class="btn-wrapper">
+                                <button matStepperNext mat-button class="form-btn" [disabled]="thirdFormGroup.invalid">Onayla</button>
+                            </div>
+
+
+                        </form>
+
+                    </mat-step>
+                </mat-stepper>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

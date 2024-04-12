@@ -1,0 +1,242 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+    padding-top: 20px;
+    .brand-area {
+        display: flex;
+        align-items: center;
+        .brand-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: #5668D5;
+            border-radius: 10px;
+            margin-right: 12px;
+            .brand-box-text {
+                font-family: 'Manrope', sans-serif;
+                font-weight: 600;
+                color: #fff;
+            }
+        }
+        .brand-name {
+            .brand-text {
+                color: #000;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 22px;
+            }
+        }
+    }
+    .button-area {
+        display: flex;
+        .btn {
+            min-width: 116px;
+            height: 44px;
+            background: linear-gradient(0deg, rgba(58, 51, 53, 0.04), rgba(58, 51, 53, 0.04)), #FFFFFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .mat-button-wrapper {
+                color: #908E8E!important;
+            }
+            fa-icon {
+                margin-right: 6px;
+            }
+            &:last-child {
+                margin-left: 8px;
+            }
+        }
+    }
+}
+
+.auth-page-content {
+    display: flex;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+    width: 100%;
+    .content-wrapper {
+        padding: 110px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: inherit;
+        height: inherit;
+        z-index: 9999;
+        .content-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 73px;
+            .main-title {
+                font-family: 'Inter', sans-serif;
+                font-style: normal;
+                font-weight: 800;
+                font-size: 34px;
+                line-height: 48px;
+                text-align: center;
+                letter-spacing: -0.0944444px;
+                color: #3A3335;
+            }
+            .sub-title {
+                font-family: "Inter", sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 21px;
+                /* identical to box height, or 150% */
+                text-align: center;
+                letter-spacing: -0.1px;
+                color: #908E8E;
+            }
+        }
+        .content-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+            width: 440px;
+            .mat-form-field {
+                width: 100%;
+                .mat-form-field-wrapper {
+                    margin-bottom: 15px!important;
+                    padding: 0px !important;
+                }
+            }
+            .form-group {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                .mat-form-field {
+                    width: 48%!important;
+                }
+            }
+            .agree-box-wrapper {
+                width: 100%;
+                margin-bottom: 20px;
+                .agree-box {
+                    font-family: 'Inter', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 21px;
+                    /* identical to box height, or 150% */
+                    letter-spacing: -0.1px;
+                    color: #908E8E;
+                    .mat-checkbox-label {
+                        width: 100%;
+                        white-space: break-spaces!important;
+                    }
+                    .mat-checkbox-frame {
+                        background: linear-gradient(0deg, rgba(58, 51, 53, 0.04), rgba(58, 51, 53, 0.04)), #FFFFFF;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .btn-wrapper {
+                width: 100%;
+                //    padding-top: 30px;
+                .form-btn {
+                    width: 100%;
+                    height: 54px;
+                    background: #5668D5;
+                    border-radius: 10px;
+                    .mat-button-wrapper {
+                        color: #FFFFFF;
+                        font-family: 'Inter', sans-serif;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .social-wrapper {
+                width: 100%;
+                .social-btn {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 16px;
+                    width: 100%;
+                    height: 54px;
+                    background: #fff;
+                    border: 1px solid #EDE8E9;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    margin-bottom: 6px;
+                    transition: .1s;
+                    fa-icon {
+                        color: #908E8E;
+                    }
+                    span {
+                        transition: .1s;
+                        width: 100%;
+                        color: #FFFFFF;
+                        font-family: 'Inter', sans-serif;
+                        font-weight: 700;
+                        color: #908E8E;
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                    &:hover {
+                        border-color: #5668D5;
+                        span,
+                        fa-icon {
+                            color: #5668D5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: #5668D5!important;
+    border-radius: 50%;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    border-radius: 50%;
+    background-color: #5668D5;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    color: #908E8E;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 25px 0;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ECECF2;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.mat-stepper-horizontal {
+    width: 100%;
+}
+
+.mat-horizontal-stepper-header-container {
+    display: none !important;
+}

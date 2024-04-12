@@ -1,0 +1,69 @@
+<div fxLayout="column" class="container">
+
+    <div class="header">
+        <div class="brand-area">
+            <div class="brand-box">
+                <span class="brand-box-text">YG</span>
+            </div>
+
+            <div class="brand-name">
+                <p class="brand-text">Yatay Geçişle</p>
+            </div>
+        </div>
+
+        <div class="button-area">
+            <a [routerLink]="'/kayit'" mat-button class="btn">Kayıt ol</a>
+
+        </div>
+    </div>
+
+    <div class="auth-page-content">
+        <div class="content-wrapper">
+            <div class="content-header">
+                <span class="main-title">Dahası için giriş yapın</span>
+                <span class="sub-title">İleriki adımlar için bilgileri girin</span>
+            </div>
+
+            <div class="content-details">
+                <form [formGroup]="signInGroup">
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-Posta</mat-label>
+                        <input matInput placeholder="" [formControlName]="'email'">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Şifre</mat-label>
+                        <input matInput placeholder="" [formControlName]="'password'">
+                    </mat-form-field>
+
+
+                    <div class="btn-wrapper">
+                        <button mat-button class="form-btn" [disabled]="signInGroup.invalid">Giriş yap</button>
+                    </div>
+
+
+                    <div class="separator">Veya</div>
+
+                    <div class="social-wrapper">
+
+                        <a href="" class="social-btn">
+                            <fa-icon [icon]="google"></fa-icon>
+                            <span>Google ile devam et</span>
+                        </a>
+
+                        <a href="" class="social-btn">
+                            <fa-icon [icon]="facebook"></fa-icon>
+                            <span>Facebook ile devam et</span>
+                        </a>
+
+                    </div>
+
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
